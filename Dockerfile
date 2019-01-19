@@ -12,7 +12,7 @@ RUN apk --update add bash curl wget && \
     ln -sf /usr/bin/node /opt/kibana-${KIBANA_VERSION}-linux-x86_64/node/bin/node && \
     ###Plugins
     /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana-plugin install "https://oss.sonatype.org/content/repositories/releases/com/floragunn/search-guard-kibana-plugin/$SG_VERSION/search-guard-kibana-plugin-$SG_VERSION.zip" && \
-    /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana-plugin install "https://github.com/bitsensor/elastalert-kibana-plugin/releases/download/1.0.1/elastalert-kibana-plugin-1.0.1-6.5.4.zip" && \
+    /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana-plugin install "https://github.com/bitsensor/elastalert-kibana-plugin/releases/download/1.0.1/elastalert-kibana-plugin-1.0.1-${KIBANA_VERSION}.zip" && \
     ####
     rm -rf /var/cache/apk/*
 
