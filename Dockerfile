@@ -10,7 +10,10 @@ RUN apk --update add bash curl wget && \
     rm -rf /opt/kibana-${KIBANA_VERSION}-linux-x86_64/node && \
     mkdir -p /opt/kibana-${KIBANA_VERSION}-linux-x86_64/node/bin && \
     ln -sf /usr/bin/node /opt/kibana-${KIBANA_VERSION}-linux-x86_64/node/bin/node && \
-		/opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana-plugin install "https://oss.sonatype.org/content/repositories/releases/com/floragunn/search-guard-kibana-plugin/$SG_VERSION/search-guard-kibana-plugin-$SG_VERSION.zip" && \
+    ###Plugins
+    /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana-plugin install "https://oss.sonatype.org/content/repositories/releases/com/floragunn/search-guard-kibana-plugin/$SG_VERSION/search-guard-kibana-plugin-$SG_VERSION.zip" && \
+    /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana-plugin install "https://github.com/bitsensor/elastalert-kibana-plugin/releases/download/1.0.1/elastalert-kibana-plugin-1.0.1-6.5.4.zip" && \
+    ####
     rm -rf /var/cache/apk/*
 
 ENV PATH /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin:$PATH
@@ -24,8 +27,8 @@ RUN chmod +x -R /run/
 ENV KIBANA_PWD="changeme" \ 
     ELASTICSEARCH_HOST="0-0-0-0" \ 
     ELASTICSEARCH_PORT="9200" \ 
-	KIBANA_HOST="0.0.0.0" \
-	ELASTICSEARCH_PROTOCOL="https"
+    KIBANA_HOST="0.0.0.0" \
+    ELASTICSEARCH_PROTOCOL="https"
 		
 EXPOSE 5601
 
