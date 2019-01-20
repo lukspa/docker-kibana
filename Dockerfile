@@ -3,7 +3,7 @@ FROM alpine:3.8
 ENV KIBANA_VERSION 6.5.4
 ENV SG_VERSION 6.5.4-17
 # kibana plugin install issue: https://github.com/elastic/kibana/issues/23724
-ENV NODE_OPTIONS "--max-old-space-size=3072"
+ENV NODE_OPTIONS "--max-old-space-size=8192"
 
 RUN apk --update add bash curl wget && \
     mkdir /opt && \
