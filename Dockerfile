@@ -15,6 +15,9 @@ RUN apk --update add bash curl wget && \
     ###Plugins
     /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana-plugin install "https://oss.sonatype.org/content/repositories/releases/com/floragunn/search-guard-kibana-plugin/$SG_VERSION/search-guard-kibana-plugin-$SG_VERSION.zip" && \
     /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana-plugin install "https://github.com/bitsensor/elastalert-kibana-plugin/releases/download/1.0.1/elastalert-kibana-plugin-1.0.1-${KIBANA_VERSION}.zip" && \
+    /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana-plugin install "https://url/to/search-guard-kibana-plugin-${KIBANA_VERSION}-17.zip" && \    
+    /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana-plugin install "https://github.com/TrumanDu/cleaner/releases/download/6.4.0/cleaner-6.4.0.zip" && \   
+    /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana-plugin install "https://github.com/dlumbrer/kbn_network/releases/download/6.5.X-1/network_vis-6-5.zip" && \   
     ####
     rm -rf /var/cache/apk/*
 
